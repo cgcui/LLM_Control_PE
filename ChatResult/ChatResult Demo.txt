@@ -1,0 +1,485 @@
+PS C:\Users\17338\Desktop\new-model\groupchat\ControlVerificationAgent> & C:/Users/17338/anaconda3new/envs/pidcda/python.exe c:/Users/17338/Desktop/new-model/groupchat/ControlVerificationAgent/groupchat12.py
+Human (to chat_manager):
+
+Design a DC-DC boost converter controller for voltage regulation with following requirements:
+    Power electronic device: DC-DC boost converter.
+    Component parameters:
+    Inductance (L) = 0.001 H,Capacitance (C) = 0.0011 F.
+    Switching frequency = 20,000 Hz.
+    Operating condition:
+    Input voltage = 50 V,Output voltage = 100 V,
+    Load fluctuation range: 50 Ω to 100 Ω at 0.25 s, then back to 50 Ω at 0.5 s.
+    Control Objective:
+    Settling time < 0.5 s,Overshoot < 5%,
+    Steady-state error < 2%.
+
+    The conversation will follow this order:
+    1. Human (me): Initiate the design request.
+    2. ManagerAgent: Broadcast design requirements and instruct ModelDesignAgent.
+    3. ModelDesignAgent: Configure and report on the model, Provide the address of the model.
+    4. ManagerAgent: Acknowledge model configuration and instruct ObjectiveAgent.
+    5. ObjectiveAgent: Define control objectives and constraints.
+    6. ManagerAgent: Acknowledge objectives and instruct ControllerAlgorithmDesignAgent.
+    7. ControllerAlgorithmDesignAgent: Select and configure a suitable control algorithm.
+    8. ManagerAgent: Acknowledge control algorithm and instruct OptimizationAlgorithmDesignAgent.
+    9. OptimizationAlgorithmDesignAgent: Select and configure a suitable optimization algorithm based on the control algorithm.
+    10. ManagerAgent: Instruct ControlVerificationAgent to begin verification.
+    11. ControlVerificationAgent: Verify the controller design and report results.
+    12. ManagerAgent: Analyze the verification results and conclude the conversation.After summarizing, end the entire conversation without generating any further content.
+    Please speak strictly in the order mentioned above.
+    Please adhere to this order and only provide information relevant to your specific task.
+
+--------------------------------------------------------------------------------
+
+Next speaker: ManagerAgent
+
+
+>>>>>>>> USING AUTO REPLY...
+ManagerAgent (to chat_manager):
+
+Broadcasting design requirements:
+- Device: DC-DC Boost Converter
+- Inductance: 0.001 H
+- Capacitance: 0.0011 F
+- Switching frequency: 20,000 Hz
+- Input voltage: 50 V
+- Output voltage: 100 V
+- Load fluctuation: 50 Ω to 100 Ω at 0.25 s, back to 50 Ω at 0.5 s
+- Control objectives: Settling time < 0.5 s, Overshoot < 5%, Steady-state error < 2%
+
+ModelDesignAgent, please configure the model based on these requirements.
+
+--------------------------------------------------------------------------------
+
+Next speaker: ModelDesignAgent
+
+
+>>>>>>>> USING AUTO REPLY...
+ModelDesignAgent (to chat_manager):
+
+Model configured successfully. Model ID: boost_converter-2023, Address: C:\Users\17338\Desktop\new-model\groupchat\ControlVerificationAgent\boost_converternopid3.fmu
+
+--------------------------------------------------------------------------------
+
+Next speaker: ManagerAgent
+
+
+>>>>>>>> USING AUTO REPLY...
+ManagerAgent (to chat_manager):
+
+Acknowledging model configuration at address: C:\Users\17338\Desktop\new-model\groupchat\ControlVerificationAgent\boost_converternopid3.fmu.
+
+ObjectiveAgent, please define the control objectives and constraints.
+
+--------------------------------------------------------------------------------
+
+Next speaker: ObjectiveAgent
+
+
+>>>>>>>> USING AUTO REPLY...
+ObjectiveAgent (to chat_manager):
+
+Control objective: Output voltage of 100V. Constraints: Overshoot less than 5%, Steady-state error less than 2%, Settling time less than 0.5s.
+
+--------------------------------------------------------------------------------
+
+Next speaker: ManagerAgent
+
+
+>>>>>>>> USING AUTO REPLY...
+ManagerAgent (to chat_manager):
+
+Objectives acknowledged.
+
+ControllerAlgorithmDesignAgent, please select and configure a suitable control algorithm.
+
+--------------------------------------------------------------------------------
+
+Next speaker: ControllerAlgorithmDesignAgent
+
+
+>>>>>>>> USING AUTO REPLY...
+ControllerAlgorithmDesignAgent (to chat_manager):
+
+Based on the selected model (boost_converter-2023), control objectives (Output voltage of 100V), and constraints (Overshoot < 
+5%, Steady-state error < 2%, Settling time < 0.5s), the Dual Loop PID controller has been chosen and configured successfully. 
+
+--------------------------------------------------------------------------------
+
+Next speaker: ManagerAgent
+
+
+>>>>>>>> USING AUTO REPLY...
+ManagerAgent (to chat_manager):
+
+Control algorithm acknowledged.
+
+OptimizationAlgorithmDesignAgent, please select and configure a suitable optimization algorithm based on the chosen control algorithm.
+
+--------------------------------------------------------------------------------
+
+Next speaker: OptimizationAlgorithmDesignAgent
+
+OptimizationAlgorithmDesignAgent (to chat_manager):
+
+After analyzing the Dual Loop PID controller, Based on the selected control algorithm (Dual Loop PID), PSO (Particle Swarm Optimization) algorithm has been chosen for optimization. Algorithm parameters have been successfully configured: {'swarm_size': 
+10, 'max_iterations': 10, 'w': 0.5, 'c1': 1.5, 'c2': 1.5}
+
+--------------------------------------------------------------------------------
+
+Next speaker: ManagerAgent
+
+
+>>>>>>>> USING AUTO REPLY...
+ManagerAgent (to chat_manager):
+
+Optimization algorithm acknowledged.
+
+ControlVerificationAgent, please begin verification of the controller design and report the results.
+
+--------------------------------------------------------------------------------
+
+Next speaker: ControlVerificationAgent
+
+
+Iteration 1/10
+Particle 1: params=[0.73900743 0.31507515 0.78801351 0.85223689 0.92553843 0.57267976
+ 0.54828823 0.16796115 0.39120841 0.49947627], Score=2.5015
+Particle 2: params=[0.7039498  0.35937892 0.7704735  0.92643183 0.81851407 0.41061588
+ 0.45384933 0.23626454 0.59634954 0.22818947], Score=2.8268
+Particle 3: params=[0.66821336 0.27182059 0.64823091 0.8984258  0.89559235 0.38254245
+ 0.54801603 0.21159611 0.63872655 0.25633279], Score=2.4985
+Particle 4: params=[0.68809151 0.20322893 0.72404562 0.92041722 0.95366696 0.43900694
+ 0.51318037 0.21418746 0.61186084 0.22287705], Score=1.9928
+Particle 5: params=[0.23823265 0.39542931 0.67613009 0.47986951 0.92310311 0.1587979
+ 0.10346535 0.12922842 0.42844646 0.27279281], Score=8.0125
+Particle 6: params=[0.7283423  0.29097392 0.76248574 0.84368529 0.74978167 0.43662593
+ 0.42401354 0.2892562  0.49515961 0.39369122], Score=2.4094
+Particle 7: params=[0.6910173  0.20977467 0.71483018 0.90372848 0.95118104 0.44484116
+ 0.52151299 0.21962204 0.60777322 0.22865402], Score=2.0397
+Particle 8: params=[0.68997403 0.20172038 0.7185581  0.92153873 0.95898583 0.43940061
+ 0.51296906 0.21146409 0.61068328 0.2208251 ], Score=1.9837
+Particle 9: params=[0.78174506 0.35751914 0.60680566 0.86860288 0.69125717 0.29607886
+ 0.46527024 0.38082543 0.48939802 0.21983891], Score=2.6995
+Particle 10: params=[7.63668713e-01 1.77750198e-01 5.43902934e-01 9.65532000e-01
+ 5.00000000e-04 5.76378428e-01 4.10747687e-01 1.57400612e-01
+ 7.03885694e-01 1.69832688e-01], Score=1.8471
+Best score this iteration: 1.8471
+
+Iteration 2/10
+Particle 1: params=[0.74433766 0.16315315 0.55734459 0.965532   0.13783412 0.53492032
+ 0.4193874  0.1728142  0.72700598 0.13328837], Score=1.8021
+Particle 2: params=[0.73451887 0.08351992 0.52993518 0.95830134 0.21729051 0.54596072
+ 0.45441504 0.16150379 0.73191701 0.13301685], Score=1.4222
+Particle 3: params=[7.67862140e-01 5.00000000e-04 5.84973303e-01 9.65532000e-01
+ 1.78855859e-01 6.30225534e-01 4.02288570e-01 1.57872901e-01
+ 7.14314834e-01 7.36005325e-02], Score=0.6804
+Particle 4: params=[8.08721007e-01 5.00000000e-04 7.00954405e-01 9.65532000e-01
+ 1.80534406e-01 7.23077159e-01 3.34722696e-01 1.58696810e-01
+ 7.49139933e-01 1.03694650e-01], Score=0.6743
+Particle 5: params=[8.49960522e-01 5.00000000e-04 7.03151768e-01 9.65532000e-01
+ 1.31426633e-01 7.62475592e-01 3.53485296e-01 1.61554471e-01
+ 7.71845999e-01 9.21190643e-02], Score=0.6776
+Particle 6: params=[0.71872952 0.2027438  0.73382701 0.8991054  0.77144065 0.47766975
+ 0.4579405  0.23227653 0.59209623 0.26274744], Score=1.9259
+Particle 7: params=[7.74221281e-01 5.00000000e-04 7.38525520e-01 9.65532000e-01
+ 1.33763760e-01 7.25182914e-01 2.55423126e-01 1.13922772e-01
+ 7.99777059e-01 2.95610609e-02], Score=0.6752
+Particle 8: params=[0.73572881 0.1245373  0.71226593 0.93928804 0.66336572 0.54825221
+ 0.44485965 0.19069255 0.66378133 0.17604476], Score=1.5195
+Particle 9: params=[0.77846858 0.02562876 0.71295065 0.96013918 0.35613879 0.67944718
+ 0.37503318 0.15527277 0.72993622 0.12701723], Score=0.8464
+Particle 10: params=[7.40560494e-01 9.82547531e-02 7.36898000e-01 5.00000000e-04
+ 9.65532000e-01 5.70317225e-01 4.32130940e-01 1.89575784e-01
+ 6.68929159e-01 1.68334544e-01], Score=2.2634
+Best score this iteration: 0.6743
+
+Iteration 3/10
+Particle 1: params=[8.01557433e-01 5.00000000e-04 6.36464104e-01 9.65532000e-01
+ 1.75355020e-02 6.91474654e-01 3.19764556e-01 1.61471935e-01
+ 8.13470237e-01 3.42398041e-02], Score=0.6850
+Particle 2: params=[8.26030078e-01 5.00000000e-04 6.78649289e-01 9.65532000e-01
+ 5.47441122e-02 7.76868593e-01 3.16777240e-01 1.43321157e-01
+ 7.78851939e-01 8.02361352e-02], Score=0.6763
+Particle 3: params=[7.93041917e-01 5.00000000e-04 5.87224381e-01 9.65532000e-01
+ 3.57242392e-02 6.91692804e-01 3.64461430e-01 1.47234125e-01
+ 7.33907223e-01 4.09209216e-02], Score=0.6797
+Particle 4: params=[8.32846907e-01 5.00000000e-04 6.96336163e-01 9.65532000e-01
+ 2.59078953e-02 7.79891203e-01 2.99031162e-01 1.47598679e-01
+ 7.76595751e-01 7.98581692e-02], Score=0.6707
+Particle 5: params=[9.58000913e-01 5.00000000e-04 7.02858974e-01 9.65532000e-01
+ 5.00000000e-04 8.97768751e-01 3.57971353e-01 1.56354107e-01
+ 8.44496201e-01 4.57354955e-02], Score=0.6803
+Particle 6: params=[0.74147496 0.1413801  0.71999112 0.92454841 0.61461564 0.5512077
+ 0.43037553 0.20257636 0.65136558 0.19702474], Score=1.5793
+Particle 7: params=[8.56411295e-01 5.00000000e-04 6.96092736e-01 9.65532000e-01
+ 5.00000000e-04 8.42420515e-01 2.50963228e-01 1.30435896e-01
+ 8.12258845e-01 4.59795841e-02], Score=0.6705
+Particle 8: params=[0.74502925 0.10894704 0.71098746 0.94287041 0.60342064 0.5703869
+ 0.4309976  0.18646361 0.67458485 0.16692759], Score=1.4252
+Particle 9: params=[8.17692349e-01 5.00000000e-04 7.25554362e-01 9.65532000e-01
+ 1.07153994e-01 8.39505478e-01 2.93505891e-01 9.74545539e-02
+ 8.20163888e-01 6.69903142e-02], Score=0.6728
+Particle 10: params=[0.81384166 0.11480744 0.56471099 0.83849819 0.20356895 0.70425795
+ 0.32921601 0.13603027 0.76463385 0.11145071], Score=1.4786
+Best score this iteration: 0.6705
+
+Iteration 4/10
+Particle 1: params=[8.78273876e-01 5.00000000e-04 7.23242156e-01 9.65532000e-01
+ 5.00000000e-04 9.02401169e-01 2.17970932e-01 1.22272637e-01
+ 8.29321611e-01 2.83996567e-02], Score=0.6705
+Particle 2: params=[8.65674267e-01 5.00000000e-04 7.20645641e-01 9.65532000e-01
+ 5.00000000e-04 8.69098545e-01 2.43017191e-01 1.30633097e-01
+ 8.11706334e-01 4.56157297e-02], Score=0.6734
+Particle 3: params=[8.48320488e-01 5.00000000e-04 6.73991222e-01 9.65532000e-01
+ 5.00000000e-04 8.23491209e-01 2.66908588e-01 1.31787840e-01
+ 7.99947036e-01 3.83957762e-02], Score=0.6760
+Particle 4: params=[8.43002020e-01 5.00000000e-04 6.95357455e-01 9.65532000e-01
+ 5.00000000e-04 8.05397264e-01 2.81020564e-01 1.41497073e-01
+ 7.90153406e-01 6.74280131e-02], Score=0.6754
+Particle 5: params=[7.76221286e-01 5.00000000e-04 6.95139095e-01 9.65532000e-01
+ 5.40822560e-02 7.53953839e-01 2.30540365e-01 1.29172565e-01
+ 7.64335258e-01 7.31943900e-02], Score=0.6815
+Particle 6: params=[0.84876932 0.00317012 0.69586041 0.965532   0.03427299 0.82623975
+ 0.26448013 0.13214765 0.80704709 0.0488561 ], Score=0.6750
+Particle 7: params=[8.72849298e-01 5.00000000e-04 6.87606179e-01 9.65532000e-01
+ 5.00000000e-04 8.65868035e-01 2.50071249e-01 1.33738521e-01
+ 8.14755202e-01 4.92632887e-02], Score=0.6704
+Particle 8: params=[0.83628777 0.0299802  0.6943787  0.95943659 0.16974378 0.78147587
+ 0.30168375 0.14874144 0.7747819  0.08280874], Score=0.8660
+Particle 9: params=[8.37798187e-01 5.00000000e-04 7.19639435e-01 9.65532000e-01
+ 3.36484454e-02 8.77377388e-01 2.67545153e-01 9.39566350e-02
+ 8.37007101e-01 5.10443126e-02], Score=0.6715
+Particle 10: params=[8.60399436e-01 5.63194786e-02 5.96714912e-01 9.65532000e-01
+ 5.00000000e-04 8.18418012e-01 2.65844671e-01 1.24082171e-01
+ 8.10872098e-01 6.64533044e-02], Score=1.0775
+Best score this iteration: 0.6704
+
+Iteration 5/10
+Particle 1: params=[8.87957848e-01 5.00000000e-04 7.03419713e-01 9.65532000e-01
+ 5.00000000e-04 9.06472440e-01 2.31101601e-01 1.26394824e-01
+ 8.17295144e-01 4.89980913e-02], Score=0.6734
+Particle 2: params=[8.73866588e-01 5.00000000e-04 7.27831628e-01 9.65532000e-01
+ 5.00000000e-04 8.87425904e-01 2.28524222e-01 1.28209523e-01
+ 8.18389174e-01 3.88255951e-02], Score=0.6714
+Particle 3: params=[8.67592354e-01 5.00000000e-04 6.95905046e-01 9.65532000e-01
+ 5.00000000e-04 8.64045400e-01 2.41758196e-01 1.29351981e-01
+ 8.18115131e-01 4.15309212e-02], Score=0.6736
+Particle 4: params=[8.53024363e-01 5.00000000e-04 6.92085923e-01 9.65532000e-01
+ 8.49193281e-03 8.23714051e-01 2.73644419e-01 1.40287719e-01
+ 7.96322817e-01 6.38485537e-02], Score=0.6709
+Particle 5: params=[7.94568737e-01 5.00000000e-04 6.93804950e-01 9.65532000e-01
+ 7.29078046e-02 7.63550081e-01 2.51239831e-01 1.35717024e-01
+ 7.66778557e-01 7.72293989e-02], Score=0.6731
+Particle 6: params=[8.75173456e-01 5.00000000e-04 6.89339111e-01 9.65532000e-01
+ 5.00000000e-04 8.89384560e-01 2.28341923e-01 1.18388625e-01
+ 8.39766398e-01 1.93059912e-02], Score=0.6738
+Particle 7: params=[8.76136898e-01 5.00000000e-04 6.85908867e-01 9.65532000e-01
+ 5.00000000e-04 8.70557539e-01 2.49892853e-01 1.34399046e-01
+ 8.15254473e-01 4.99200296e-02], Score=0.6713
+Particle 8: params=[8.79792587e-01 5.00000000e-04 6.85689461e-01 9.65532000e-01
+ 5.00000000e-04 8.80146327e-01 2.43000155e-01 1.32107974e-01
+ 8.20469509e-01 4.51427988e-02], Score=0.6713
+Particle 9: params=[8.54683759e-01 5.00000000e-04 7.07138290e-01 9.65532000e-01
+ 7.82450421e-03 8.82663396e-01 2.56429845e-01 1.06827344e-01
+ 8.33076734e-01 4.74778635e-02], Score=0.6753
+Particle 10: params=[8.69818124e-01 4.42418931e-02 6.03722889e-01 9.65532000e-01
+ 5.00000000e-04 8.41604968e-01 2.53061810e-01 1.21762783e-01
+ 8.20149581e-01 5.73412721e-02], Score=0.9817
+Best score this iteration: 0.6704
+
+Iteration 6/10
+Particle 1: params=[8.80761678e-01 5.00000000e-04 6.90191743e-01 9.65532000e-01
+ 5.00000000e-04 8.82703394e-01 2.44684929e-01 1.32070157e-01
+ 8.15023317e-01 5.11642488e-02], Score=0.6722
+Particle 2: params=[8.76243814e-01 5.00000000e-04 7.15627107e-01 9.65532000e-01
+ 5.00000000e-04 8.85602389e-01 2.32579007e-01 1.29738887e-01
+ 8.18705706e-01 4.10777111e-02], Score=0.6722
+Particle 3: params=[8.80245443e-01 5.00000000e-04 6.89994279e-01 9.65532000e-01
+ 5.00000000e-04 8.78862092e-01 2.45104753e-01 1.34062008e-01
+ 8.18802997e-01 5.07966068e-02], Score=0.6733
+Particle 4: params=[8.62607575e-01 5.00000000e-04 6.89130935e-01 9.65532000e-01
+ 9.98432848e-03 8.42032346e-01 2.65501373e-01 1.38637666e-01
+ 8.02993772e-01 5.94928039e-02], Score=0.6725
+Particle 5: params=[8.51844376e-01 5.00000000e-04 6.88348859e-01 9.65532000e-01
+ 2.90869023e-02 8.35794044e-01 2.54494497e-01 1.36159748e-01
+ 7.99125323e-01 6.00888330e-02], Score=0.6746
+Particle 6: params=[8.80803525e-01 5.00000000e-04 6.86791410e-01 9.65532000e-01
+ 5.00000000e-04 8.95188848e-01 2.28926354e-01 1.21440494e-01
+ 8.37424844e-01 2.44933620e-02], Score=0.6770
+Particle 7: params=[8.73610359e-01 5.00000000e-04 6.87213261e-01 9.65532000e-01
+ 5.00000000e-04 8.66953630e-01 2.50029951e-01 1.33891429e-01
+ 8.14870780e-01 4.94153206e-02], Score=0.6708
+Particle 8: params=[8.83405363e-01 5.00000000e-04 6.85205753e-01 9.65532000e-01
+ 5.00000000e-04 8.89022373e-01 2.37049200e-01 1.30249125e-01
+ 8.24999084e-01 4.11260441e-02], Score=0.6725
+Particle 9: params=[8.48653619e-01 5.00000000e-04 7.08287931e-01 9.65532000e-01
+ 2.91674136e-02 8.68647194e-01 2.63795991e-01 1.09315676e-01
+ 8.26743740e-01 5.20786801e-02], Score=0.6857
+Particle 10: params=[8.75260241e-01 7.81912844e-04 6.83466258e-01 9.65532000e-01
+ 5.00000000e-04 8.70027846e-01 2.47660344e-01 1.32679614e-01
+ 8.17051805e-01 4.80816836e-02], Score=0.6643
+Best score this iteration: 0.6643
+
+Iteration 7/10
+Particle 1: params=[8.77262111e-01 5.00000000e-04 7.03216720e-01 9.65532000e-01
+ 5.00000000e-04 8.86018450e-01 2.34374633e-01 1.28356872e-01
+ 8.22072317e-01 3.96727815e-02], Score=0.6742
+Particle 2: params=[8.76469844e-01 5.00000000e-04 7.09770301e-01 9.65532000e-01
+ 5.00000000e-04 8.83368097e-01 2.35079719e-01 1.30335317e-01
+ 8.18543591e-01 4.22934316e-02], Score=0.6736
+Particle 3: params=[8.78633433e-01 6.40755073e-04 6.83387438e-01 9.65532000e-01
+ 5.00000000e-04 8.74484304e-01 2.47897723e-01 1.33855265e-01
+ 8.17485356e-01 5.03936833e-02], Score=0.6681
+Particle 4: params=[8.39204558e-01 5.79183192e-04 6.93330459e-01 9.65532000e-01
+ 2.24324574e-02 7.93639522e-01 2.90552628e-01 1.44825264e-01
+ 7.83328958e-01 7.45305196e-02], Score=0.6740
+Particle 5: params=[8.36903059e-01 6.87929805e-04 6.86732478e-01 9.65532000e-01
+ 2.82865276e-02 8.22333325e-01 2.44287111e-01 1.31847906e-01
+ 7.96076769e-01 5.88297362e-02], Score=0.6770
+Particle 6: params=[8.70222567e-01 5.00000000e-04 6.84599425e-01 9.65532000e-01
+ 5.00000000e-04 8.61012554e-01 2.50932256e-01 1.32748204e-01
+ 8.14690009e-01 4.90796562e-02], Score=0.6698
+Particle 7: params=[8.74007145e-01 7.09365361e-04 6.83990193e-01 9.65532000e-01
+ 5.00000000e-04 8.68271028e-01 2.47631467e-01 1.32362280e-01
+ 8.16943523e-01 4.77606959e-02], Score=0.6703
+Particle 8: params=[8.76503770e-01 5.00000000e-04 6.83735102e-01 9.65532000e-01
+ 5.00000000e-04 8.72926594e-01 2.46043568e-01 1.32310583e-01
+ 8.18262510e-01 4.70221836e-02], Score=0.6778
+Particle 9: params=[8.47679050e-01 5.00000000e-04 7.09124367e-01 9.65532000e-01
+ 2.83398153e-02 8.72098850e-01 2.63225024e-01 1.06102576e-01
+ 8.29630937e-01 5.11737759e-02], Score=0.6717
+Particle 10: params=[8.76348664e-01 5.00000000e-04 6.99414932e-01 9.65532000e-01
+ 5.00000000e-04 8.75712421e-01 2.46580051e-01 1.34862981e-01
+ 8.16432249e-01 4.62297659e-02], Score=0.6728
+Best score this iteration: 0.6643
+
+Iteration 8/10
+Particle 1: params=[8.76366864e-01 5.00000000e-04 7.05079135e-01 9.65532000e-01
+ 5.00000000e-04 8.84499720e-01 2.34909755e-01 1.29010485e-01
+ 8.22280499e-01 3.87587892e-02], Score=0.6748
+Particle 2: params=[8.75123427e-01 5.00000000e-04 7.15123732e-01 9.65532000e-01
+ 5.00000000e-04 8.82897206e-01 2.35376115e-01 1.30611746e-01
+ 8.17840333e-01 4.18284423e-02], Score=0.6714
+Particle 3: params=[8.75869662e-01 5.18503497e-04 6.99192107e-01 9.65532000e-01
+ 5.00000000e-04 8.74921040e-01 2.47048330e-01 1.34890702e-01
+ 8.16096540e-01 4.58637814e-02], Score=0.6725
+Particle 4: params=[8.74159447e-01 5.00000000e-04 7.02273692e-01 9.65532000e-01
+ 1.40767209e-03 8.71657946e-01 2.49019843e-01 1.35857457e-01
+ 8.14294903e-01 4.75315660e-02], Score=0.6731
+Particle 5: params=[8.19317626e-01 5.48472459e-04 6.94806475e-01 9.65532000e-01
+ 4.77757787e-02 7.98941611e-01 2.47354878e-01 1.34366469e-01
+ 7.83218019e-01 6.63272215e-02], Score=0.6758
+Particle 6: params=[8.70972361e-01 5.00000000e-04 6.91092201e-01 9.65532000e-01
+ 5.00000000e-04 8.61054368e-01 2.53297335e-01 1.35999107e-01
+ 8.10958118e-01 5.26636443e-02], Score=0.6741
+Particle 7: params=[8.74239304e-01 7.37575783e-04 6.84352158e-01 9.65532000e-01
+ 5.00000000e-04 8.69020114e-01 2.47083158e-01 1.32219639e-01
+ 8.17324707e-01 4.73298664e-02], Score=0.6671
+Particle 8: params=[8.76984820e-01 5.00000000e-04 6.95950896e-01 9.65532000e-01
+ 5.00000000e-04 8.76054043e-01 2.46404084e-01 1.34446786e-01
+ 8.16916191e-01 4.65007004e-02], Score=0.6836
+Particle 9: params=[8.74279830e-01 5.00000000e-04 7.04596985e-01 9.65532000e-01
+ 5.00000000e-04 8.80152709e-01 2.46688335e-01 1.30975654e-01
+ 8.19599874e-01 4.52517274e-02], Score=0.6737
+Particle 10: params=[8.75827749e-01 5.00000000e-04 6.91781954e-01 9.65532000e-01
+ 5.00000000e-04 8.72991804e-01 2.47097075e-01 1.33818029e-01
+ 8.16728766e-01 4.71160870e-02], Score=0.6749
+Best score this iteration: 0.6643
+
+Iteration 9/10
+Particle 1: params=[8.77114583e-01 5.00000000e-04 7.08542506e-01 9.65532000e-01
+ 5.00000000e-04 8.88365139e-01 2.31984101e-01 1.27906582e-01
+ 8.23241428e-01 3.73565849e-02], Score=0.6725
+Particle 2: params=[8.74194866e-01 5.00000000e-04 7.18326300e-01 9.65532000e-01
+ 5.00000000e-04 8.83119118e-01 2.34044250e-01 1.29926893e-01
+ 8.17762835e-01 4.11679626e-02], Score=0.6712
+Particle 3: params=[8.76003262e-01 5.22249766e-04 6.97434128e-01 9.65532000e-01
+ 5.00000000e-04 8.74648392e-01 2.47097397e-01 1.34699231e-01
+ 8.16248560e-01 4.62544011e-02], Score=0.6690
+Particle 4: params=[8.36094495e-01 5.00000000e-04 6.89184058e-01 9.65532000e-01
+ 2.39869155e-02 7.85322572e-01 2.95332007e-01 1.45643391e-01
+ 7.80086651e-01 7.80843664e-02], Score=0.6731
+Particle 5: params=[8.16310204e-01 5.00000000e-04 6.95418481e-01 9.65532000e-01
+ 5.31039647e-02 7.93689414e-01 2.49548000e-01 1.35330892e-01
+ 7.80209038e-01 6.86970901e-02], Score=0.6724
+Particle 6: params=[8.74250247e-01 5.00000000e-04 6.86557827e-01 9.65532000e-01
+ 5.00000000e-04 8.70523924e-01 2.46510176e-01 1.31717706e-01
+ 8.18473429e-01 4.54417142e-02], Score=0.6719
+Particle 7: params=[8.75416100e-01 5.74154988e-04 6.89711718e-01 9.65532000e-01
+ 5.00000000e-04 8.71996252e-01 2.46983400e-01 1.33328552e-01
+ 8.16976863e-01 4.70915715e-02], Score=0.6687
+Particle 8: params=[8.77177335e-01 5.00000000e-04 6.90914430e-01 9.65532000e-01
+ 5.00000000e-04 8.75652140e-01 2.45757015e-01 1.33442079e-01
+ 8.17852585e-01 4.63971897e-02], Score=0.6713
+Particle 9: params=[8.55948321e-01 5.00000000e-04 7.01612943e-01 9.65532000e-01
+ 1.75963170e-02 8.72892315e-01 2.58159767e-01 1.13185743e-01
+ 8.26807127e-01 4.98729394e-02], Score=0.6754
+Particle 10: params=[8.75192091e-01 5.00000000e-04 6.82467651e-01 9.65532000e-01
+ 5.00000000e-04 8.69671913e-01 2.47727985e-01 1.32542906e-01
+ 8.17090597e-01 4.81976392e-02], Score=0.6688
+Best score this iteration: 0.6643
+
+Iteration 10/10
+Particle 1: params=[8.76869292e-01 5.00000000e-04 7.03085185e-01 9.65532000e-01
+ 5.00000000e-04 8.87444507e-01 2.31124087e-01 1.26434768e-01
+ 8.24011052e-01 3.74243429e-02], Score=0.6723
+Particle 2: params=[8.74030598e-01 5.00000000e-04 7.18195715e-01 9.65532000e-01
+ 5.00000000e-04 8.82874333e-01 2.34072131e-01 1.29846176e-01
+ 8.17732880e-01 4.11870319e-02], Score=0.6717
+Particle 3: params=[8.77595076e-01 5.98296588e-04 6.82271762e-01 9.65532000e-01
+ 5.00000000e-04 8.72815484e-01 2.47876800e-01 1.33350770e-01
+ 8.17423977e-01 4.98721296e-02], Score=0.6725
+Particle 4: params=[8.28883304e-01 5.00000000e-04 6.92950459e-01 9.65532000e-01
+ 2.82321039e-02 7.70463690e-01 3.03855661e-01 1.48314538e-01
+ 7.73216979e-01 8.31942276e-02], Score=0.6715
+Particle 5: params=[8.26161045e-01 5.00000000e-04 6.93241936e-01 9.65532000e-01
+ 4.48316914e-02 8.06126889e-01 2.49663547e-01 1.35028871e-01
+ 7.86154214e-01 6.55321359e-02], Score=0.6717
+Particle 6: params=[8.74187213e-01 5.00000000e-04 6.80585133e-01 9.65532000e-01
+ 5.00000000e-04 8.67530847e-01 2.48276919e-01 1.32150906e-01
+ 8.16950009e-01 4.83864718e-02], Score=0.6692
+Particle 7: params=[8.74853427e-01 5.67927974e-04 6.82160880e-01 9.65532000e-01
+ 5.00000000e-04 8.69164407e-01 2.47612641e-01 1.32337845e-01
+ 8.17181267e-01 4.80556333e-02], Score=0.6704
+Particle 8: params=[8.78693518e-01 5.00000000e-04 6.84994067e-01 9.65532000e-01
+ 5.00000000e-04 8.77705319e-01 2.44050674e-01 1.32185322e-01
+ 8.19711922e-01 4.58017192e-02], Score=0.6715
+Particle 9: params=[8.32214378e-01 5.00000000e-04 7.20946046e-01 9.65532000e-01
+ 3.87611475e-02 8.76447405e-01 2.70815856e-01 8.83347508e-02
+ 8.39560674e-01 5.20786813e-02], Score=0.6751
+Particle 10: params=[8.75125544e-01 7.41536650e-04 6.81492542e-01 9.65532000e-01
+ 5.00000000e-04 8.69324355e-01 2.47794035e-01 1.32409414e-01
+ 8.17128477e-01 4.83108662e-02], Score=0.6680
+Best score this iteration: 0.6643
+ControlVerificationAgent (to chat_manager):
+
+Verification completed. Result: {'mae': 0.09932869342953177, 'overshoot': 0.00914142568128213, 'settling_time': 0.0018000000000000002, 'rise_time': 0.0001, 'steady_state_error': 0.00187097732670523, 'best_params': {'voltage_k': 0.8751255439461858, 'voltage_Ti': 0.0007415366495244313, 'current_k': 0.6814925420445974, 'current_Ti': 0.965532}}
+
+--------------------------------------------------------------------------------
+
+Next speaker: ManagerAgent
+
+Verification Result Analysis:
+        1. Overshoot: 0.9141%
+           Target: Below 5%
+           Status: Passed
+
+        2. Settling Time: 0.001800 seconds
+           Target: Below 0.5 seconds
+           Status: Passed
+
+        3. Steady-State Error: 0.1871%
+           Target: Below 2%
+           Status: Passed
+
+        4. Optimized Controller Parameters:
+           Voltage PI: Kp = 0.875126, Ti = 0.000742
+           Current PI: Kp = 0.681493, Ti = 0.965532
+
+        The Boost converter controller design process has been completed.
+        All performance metrics have met or exceeded the specified targets.
+        Further testing under various load conditions is recommended to ensure robust performance.
+
+Conversation ended successfully.
+Chat terminated by manager.
