@@ -2,6 +2,8 @@
 
 ## Introduction
 This letter is aiming to propose an Large Language Model (LLM) based multi-agent framework for goal oriented control design in power electronics. The framework leverages the reasoning capabilities of LLM and a multi-agent workflow to develop an efficient and autonomous controller design process. The LLM agent is able to understand and respond to high-level instructions in natural language, adapting its behavior based on the engineering specific requirements and constraints from a practical implementation point of view. The efficacy of the proposed framework is demonstrated through a case study on a DC-DC boost converter, highlighting its potential to revolutionize the controller design framework for power electronics field.
+![image](https://github.com/user-attachments/assets/2f67e5e4-e265-47e0-8bfe-9851a556efda)
+
 ## Project Structure (Taking the dual-loop pid control boost in groupchat as an example)
 - `main.py`: The main program file, which includes the implementation of the optimization and simulation process.
 - `simulation.py`: Contains functions for simulating the boost converter.
@@ -66,7 +68,7 @@ Please adhere to this order and only provide information relevant to your specif
 After the optimization is completed, the program will generate a chart of the output voltage over time, saved as 'boost_converter_output.png'. In addition, the console output will display the best parameters and performance evaluation results.
 
 ## Video 
-Video.mp4
+[[[Video.mp4](https://private-user-images.githubusercontent.com/9498976/374766959-fd29e90a-8e02-432a-b4b3-6cd0fbfbd0a1.mp4?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mjg0MzcyNjUsIm5iZiI6MTcyODQzNjk2NSwicGF0aCI6Ii85NDk4OTc2LzM3NDc2Njk1OS1mZDI5ZTkwYS04ZTAyLTQzMmEtYjRiMy02Y2QwZmJmYmQwYTEubXA0P1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQVZDT0RZTFNBNTNQUUs0WkElMkYyMDI0MTAwOSUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyNDEwMDlUMDEyMjQ1WiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9MmQ2MGMzNGY4YjBkZDcyMDVjMjU1YjAwYjkwZmVjZmQ5YWMzMGVjZjZhODBmMmY4Y2U0MGUyYmU5MWM1NzdkNiZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QifQ.TAufEx1592inLE3I_iIKO4jT00EzJ4_Umq_HESDDPuo)]](https://github.com/cgcui/LLM_Control_PE/issues/1#issue-2574517093)
 
 ## Contribution
 Contributions to this project are welcome. Please follow the standard Git workflow, submit pull requests for review.
