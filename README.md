@@ -24,7 +24,7 @@ This letter is aiming to propose an Large Language Model (LLM) based multi-agent
 - openai
 - chainlit
 - Cython
-- pyautogen
+- ag2
 - pybind11
 - pyswarm
 
